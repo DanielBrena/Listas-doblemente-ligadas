@@ -28,6 +28,22 @@ public class ListaDoble <T>{
 		
 	}
 	
+	public void insertarAlFinal(T dato){
+		Nodo<T> q = this.p;
+		Nodo<T> t = new Nodo();
+		t.setValor(dato);
+		while(q.getLigaDerecha() != null){
+			q = q.getLigaDerecha();
+		}
+		
+		q.setLigaDerecha(t);
+		t.setLigaIzquierda(q);
+		t.setLigaDerecha(null);
+		q = t;
+			
+		
+	}
+	
 	public void mostrar(){
 		Nodo<T> q = this.p;
 		while(q != null){
